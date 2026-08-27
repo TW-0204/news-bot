@@ -1,0 +1,286 @@
+ï»¿2026-08-27T06:16:39.2188532Z Current runner version: '2.336.0'
+2026-08-27T06:16:39.2247736Z ##[group]Runner Image Provisioner
+2026-08-27T06:16:39.2249040Z Hosted Compute Agent
+2026-08-27T06:16:39.2250156Z Version: 20260819.586
+2026-08-27T06:16:39.2251200Z Commit: 3cc4a88dfa507ef76119ad1bb3eccc6378bb2b76
+2026-08-27T06:16:39.2252572Z Build Date: 2026-08-18T23:20:18Z
+2026-08-27T06:16:39.2253679Z Worker ID: {cb543f37-0619-4c08-ad8b-c5d840c87133}
+2026-08-27T06:16:39.2254835Z Azure Region: eastus
+2026-08-27T06:16:39.2256254Z ##[endgroup]
+2026-08-27T06:16:39.2259120Z ##[group]Operating System
+2026-08-27T06:16:39.2260202Z Ubuntu
+2026-08-27T06:16:39.2261041Z 24.04.4
+2026-08-27T06:16:39.2262001Z LTS
+2026-08-27T06:16:39.2262833Z ##[endgroup]
+2026-08-27T06:16:39.2263904Z ##[group]Runner Image
+2026-08-27T06:16:39.2264873Z Image: ubuntu-24.04
+2026-08-27T06:16:39.2266173Z Version: 20260823.283.1
+2026-08-27T06:16:39.2268265Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260823.283/images/ubuntu/Ubuntu2404-Readme.md
+2026-08-27T06:16:39.2271113Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260823.283
+2026-08-27T06:16:39.2272704Z ##[endgroup]
+2026-08-27T06:16:39.2274737Z ##[group]GITHUB_TOKEN Permissions
+2026-08-27T06:16:39.2278094Z Contents: read
+2026-08-27T06:16:39.2279029Z Metadata: read
+2026-08-27T06:16:39.2280021Z Packages: read
+2026-08-27T06:16:39.2280933Z ##[endgroup]
+2026-08-27T06:16:39.2284304Z Secret source: Actions
+2026-08-27T06:16:39.2286359Z Prepare workflow directory
+2026-08-27T06:16:39.2761220Z Prepare all required actions
+2026-08-27T06:16:39.2830355Z Getting action download info
+2026-08-27T06:16:39.4504490Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-08-27T06:16:39.5714348Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-08-27T06:16:39.7762136Z Complete job name: send-news
+2026-08-27T06:16:39.8491926Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-08-27T06:16:39.8500608Z ##[group]Run actions/checkout@v4
+2026-08-27T06:16:39.8501320Z with:
+2026-08-27T06:16:39.8501803Z   repository: TW-0204/news-bot
+2026-08-27T06:16:39.8505802Z   token: ***
+2026-08-27T06:16:39.8506295Z   ssh-strict: true
+2026-08-27T06:16:39.8506772Z   ssh-user: git
+2026-08-27T06:16:39.8507254Z   persist-credentials: true
+2026-08-27T06:16:39.8507783Z   clean: true
+2026-08-27T06:16:39.8508268Z   sparse-checkout-cone-mode: true
+2026-08-27T06:16:39.8508820Z   fetch-depth: 1
+2026-08-27T06:16:39.8509292Z   fetch-tags: false
+2026-08-27T06:16:39.8509771Z   show-progress: true
+2026-08-27T06:16:39.8510253Z   lfs: false
+2026-08-27T06:16:39.8510751Z   submodules: false
+2026-08-27T06:16:39.8511241Z   set-safe-directory: true
+2026-08-27T06:16:39.8511784Z   allow-unsafe-pr-checkout: false
+2026-08-27T06:16:39.8512541Z ##[endgroup]
+2026-08-27T06:16:39.9764388Z Syncing repository: TW-0204/news-bot
+2026-08-27T06:16:39.9789672Z ##[group]Getting Git version info
+2026-08-27T06:16:39.9828858Z Working directory is '/home/runner/work/news-bot/news-bot'
+2026-08-27T06:16:39.9848060Z [command]/usr/bin/git version
+2026-08-27T06:16:39.9849456Z git version 2.55.0
+2026-08-27T06:16:39.9855761Z ##[endgroup]
+2026-08-27T06:16:39.9862430Z Temporarily overriding HOME='/home/runner/work/_temp/0e272e29-3211-489c-9abd-4ec6953372de' before making global git config changes
+2026-08-27T06:16:39.9864731Z Adding repository directory to the temporary git global config as a safe directory
+2026-08-27T06:16:39.9866736Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/news-bot/news-bot
+2026-08-27T06:16:39.9958022Z Deleting the contents of '/home/runner/work/news-bot/news-bot'
+2026-08-27T06:16:39.9960253Z ##[group]Initializing the repository
+2026-08-27T06:16:39.9962713Z [command]/usr/bin/git init /home/runner/work/news-bot/news-bot
+2026-08-27T06:16:40.0060379Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-08-27T06:16:40.0062502Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-08-27T06:16:40.0064832Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-08-27T06:16:40.0066668Z hint: call:
+2026-08-27T06:16:40.0067919Z hint:
+2026-08-27T06:16:40.0071395Z hint: 	git config --global init.defaultBranch <name>
+2026-08-27T06:16:40.0072340Z hint:
+2026-08-27T06:16:40.0073310Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-08-27T06:16:40.0074814Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-08-27T06:16:40.0076339Z hint:
+2026-08-27T06:16:40.0077019Z hint: 	git branch -m <name>
+2026-08-27T06:16:40.0077818Z hint:
+2026-08-27T06:16:40.0078891Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-08-27T06:16:40.0080538Z Initialized empty Git repository in /home/runner/work/news-bot/news-bot/.git/
+2026-08-27T06:16:40.0083128Z [command]/usr/bin/git remote add origin https://github.com/TW-0204/news-bot
+2026-08-27T06:16:40.0186621Z ##[endgroup]
+2026-08-27T06:16:40.0191873Z ##[group]Disabling automatic garbage collection
+2026-08-27T06:16:40.0193212Z [command]/usr/bin/git config --local gc.auto 0
+2026-08-27T06:16:40.0236315Z ##[endgroup]
+2026-08-27T06:16:40.0241752Z ##[group]Setting up auth
+2026-08-27T06:16:40.0266465Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-08-27T06:16:40.0278107Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-08-27T06:16:40.0733005Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-08-27T06:16:40.0799384Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-08-27T06:16:40.1306592Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-08-27T06:16:40.1310183Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-08-27T06:16:40.2287209Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-08-27T06:16:40.2289578Z ##[endgroup]
+2026-08-27T06:16:40.2290742Z ##[group]Fetching the repository
+2026-08-27T06:16:40.2293177Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3bb44045c73cddb0711a94d94f9ec92acae7f9f2:refs/remotes/origin/main
+2026-08-27T06:16:40.4526039Z From https://github.com/TW-0204/news-bot
+2026-08-27T06:16:40.4528356Z  * [new ref]         3bb44045c73cddb0711a94d94f9ec92acae7f9f2 -> origin/main
+2026-08-27T06:16:40.4535063Z ##[endgroup]
+2026-08-27T06:16:40.4536714Z ##[group]Determining the checkout info
+2026-08-27T06:16:40.4538127Z ##[endgroup]
+2026-08-27T06:16:40.4538970Z [command]/usr/bin/git sparse-checkout disable
+2026-08-27T06:16:40.4577332Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-08-27T06:16:40.4773751Z ##[group]Checking out the ref
+2026-08-27T06:16:40.4796506Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-08-27T06:16:40.4803306Z Switched to a new branch 'main'
+2026-08-27T06:16:40.4804693Z branch 'main' set up to track 'origin/main'.
+2026-08-27T06:16:40.4809557Z ##[endgroup]
+2026-08-27T06:16:40.4851760Z [command]/usr/bin/git log -1 --format=%H
+2026-08-27T06:16:40.4884541Z 3bb44045c73cddb0711a94d94f9ec92acae7f9f2
+2026-08-27T06:16:40.5269687Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-08-27T06:16:40.5274353Z ##[group]Run actions/setup-python@v5
+2026-08-27T06:16:40.5275122Z with:
+2026-08-27T06:16:40.5275792Z   python-version: 3.11
+2026-08-27T06:16:40.5276403Z   cache: pip
+2026-08-27T06:16:40.5276959Z   check-latest: false
+2026-08-27T06:16:40.5282264Z   token: ***
+2026-08-27T06:16:40.5282838Z   update-environment: true
+2026-08-27T06:16:40.5283512Z   allow-prereleases: false
+2026-08-27T06:16:40.5284178Z   freethreaded: false
+2026-08-27T06:16:40.5284768Z ##[endgroup]
+2026-08-27T06:16:40.6689350Z ##[group]Installed versions
+2026-08-27T06:16:40.6807884Z (node:1993) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-08-27T06:16:40.6836934Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-08-27T06:16:40.6856238Z Successfully set up CPython (3.11.16)
+2026-08-27T06:16:40.6867002Z ##[endgroup]
+2026-08-27T06:16:40.7422842Z [command]/opt/hostedtoolcache/Python/3.11.16/x64/bin/pip cache dir
+2026-08-27T06:16:41.0239574Z /home/runner/.cache/pip
+2026-08-27T06:16:41.1104377Z pip cache is not found
+2026-08-27T06:16:41.1384791Z ##[group]Run pip install -r requirements.txt
+2026-08-27T06:16:41.1386682Z [36;1mpip install -r requirements.txt[0m
+2026-08-27T06:16:41.1437616Z shell: /usr/bin/bash -e {0}
+2026-08-27T06:16:41.1438836Z env:
+2026-08-27T06:16:41.1440106Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-08-27T06:16:41.1442231Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-08-27T06:16:41.1444331Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-08-27T06:16:41.1446582Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-08-27T06:16:41.1448507Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-08-27T06:16:41.1450433Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-08-27T06:16:41.1452059Z ##[endgroup]
+2026-08-27T06:16:41.9273702Z Collecting requests>=2.31.0 (from -r requirements.txt (line 1))
+2026-08-27T06:16:41.9739385Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+2026-08-27T06:16:41.9869000Z Collecting beautifulsoup4>=4.12.0 (from -r requirements.txt (line 2))
+2026-08-27T06:16:41.9914730Z   Downloading beautifulsoup4-4.15.0-py3-none-any.whl.metadata (3.8 kB)
+2026-08-27T06:16:42.0026771Z Collecting feedparser>=6.0.10 (from -r requirements.txt (line 3))
+2026-08-27T06:16:42.0067740Z   Downloading feedparser-6.0.14-py3-none-any.whl.metadata (2.7 kB)
+2026-08-27T06:16:42.0542903Z Collecting pytz>=2024.1 (from -r requirements.txt (line 4))
+2026-08-27T06:16:42.0562329Z   Downloading pytz-2026.3.post1-py2.py3-none-any.whl.metadata (22 kB)
+2026-08-27T06:16:42.0767673Z Collecting python-dotenv>=1.0.1 (from -r requirements.txt (line 5))
+2026-08-27T06:16:42.0785980Z   Downloading python_dotenv-1.2.3-py3-none-any.whl.metadata (29 kB)
+2026-08-27T06:16:42.2250826Z Collecting charset_normalizer<4,>=2 (from requests>=2.31.0->-r requirements.txt (line 1))
+2026-08-27T06:16:42.2254828Z   Downloading charset_normalizer-3.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (45 kB)
+2026-08-27T06:16:42.2422559Z Collecting idna<4,>=2.5 (from requests>=2.31.0->-r requirements.txt (line 1))
+2026-08-27T06:16:42.2454412Z   Downloading idna-3.19-py3-none-any.whl.metadata (9.2 kB)
+2026-08-27T06:16:42.2667101Z Collecting urllib3<3,>=1.26 (from requests>=2.31.0->-r requirements.txt (line 1))
+2026-08-27T06:16:42.2700836Z   Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+2026-08-27T06:16:42.2865723Z Collecting certifi>=2023.5.7 (from requests>=2.31.0->-r requirements.txt (line 1))
+2026-08-27T06:16:42.2893271Z   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+2026-08-27T06:16:42.3050597Z Collecting soupsieve>=1.6.1 (from beautifulsoup4>=4.12.0->-r requirements.txt (line 2))
+2026-08-27T06:16:42.3085863Z   Downloading soupsieve-2.9.2-py3-none-any.whl.metadata (4.6 kB)
+2026-08-27T06:16:42.3223295Z Collecting typing-extensions>=4.0.0 (from beautifulsoup4>=4.12.0->-r requirements.txt (line 2))
+2026-08-27T06:16:42.3256549Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-08-27T06:16:42.3356500Z Collecting feedparser-sgmllib<3,>=2 (from feedparser>=6.0.10->-r requirements.txt (line 3))
+2026-08-27T06:16:42.3389195Z   Downloading feedparser_sgmllib-2.1.0-py3-none-any.whl.metadata (926 bytes)
+2026-08-27T06:16:42.3463950Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+2026-08-27T06:16:42.3527331Z Downloading charset_normalizer-3.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (262 kB)
+2026-08-27T06:16:42.3618958Z Downloading idna-3.19-py3-none-any.whl (68 kB)
+2026-08-27T06:16:42.3672595Z Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+2026-08-27T06:16:42.3736784Z Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+2026-08-27T06:16:42.3798220Z Downloading feedparser-6.0.14-py3-none-any.whl (80 kB)
+2026-08-27T06:16:42.3849727Z Downloading feedparser_sgmllib-2.1.0-py3-none-any.whl (11 kB)
+2026-08-27T06:16:42.3899076Z Downloading pytz-2026.3.post1-py2.py3-none-any.whl (508 kB)
+2026-08-27T06:16:42.4006950Z Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+2026-08-27T06:16:42.4057571Z Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+2026-08-27T06:16:42.4117988Z Downloading soupsieve-2.9.2-py3-none-any.whl (37 kB)
+2026-08-27T06:16:42.4168156Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-08-27T06:16:42.5294455Z Installing collected packages: pytz, urllib3, typing-extensions, soupsieve, python-dotenv, idna, feedparser-sgmllib, charset_normalizer, certifi, requests, feedparser, beautifulsoup4
+2026-08-27T06:16:43.0525831Z 
+2026-08-27T06:16:43.0544411Z Successfully installed beautifulsoup4-4.15.0 certifi-2026.7.22 charset_normalizer-3.5.1 feedparser-6.0.14 feedparser-sgmllib-2.1.0 idna-3.19 python-dotenv-1.2.3 pytz-2026.3.post1 requests-2.34.2 soupsieve-2.9.2 typing-extensions-4.16.0 urllib3-2.7.0
+2026-08-27T06:16:43.1224507Z ##[group]Run python main.py
+2026-08-27T06:16:43.1224837Z [36;1mpython main.py[0m
+2026-08-27T06:16:43.1267785Z shell: /usr/bin/bash -e {0}
+2026-08-27T06:16:43.1268067Z env:
+2026-08-27T06:16:43.1268366Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-08-27T06:16:43.1268829Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib/pkgconfig
+2026-08-27T06:16:43.1269272Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-08-27T06:16:43.1269670Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-08-27T06:16:43.1270059Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.16/x64
+2026-08-27T06:16:43.1270453Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.16/x64/lib
+2026-08-27T06:16:43.1271075Z   NAVER_USER: ***
+2026-08-27T06:16:43.1271329Z   NAVER_PASS: ***
+2026-08-27T06:16:43.1271568Z   NAVER_PASS_TEST: ***
+2026-08-27T06:16:43.1271851Z   RECEIVER_EMAIL: ***
+2026-08-27T06:16:43.1272093Z ##[endgroup]
+2026-08-27T06:16:53.8351427Z >>> ì´ë©ì¼ ë°ì¡ ì¤í¨: ë¤ì´ë² SMTP ë¡ê·¸ì¸ ì¸ì¦ ì¤í¨ (ìì¸: (535, b'5.7.1 Username and Password not accepted 8OS+m1gWSDyZDeqOVybc-g - nsmtp'))
+2026-08-27T06:16:53.8352557Z íì¸ ì¬í­:
+2026-08-27T06:16:53.8358551Z 1. https://mail.naver.com íê²½ì¤ì  > POP3/IMAP ì¤ì  > POP3/SMTP ì¤ì ìì 'POP3/SMTP ì¬ì©'ì´ [ì¬ì©í¨]ì¼ë¡ ì²´í¬ëì´ ìëì§ ê¼­ íì¸í´ ì£¼ì¸ì.
+2026-08-27T06:16:53.8359438Z >>> 1. ê¸ìµ & ë¶ëì° ë´ì¤ ìì§ ì¤...
+2026-08-27T06:16:53.8360463Z 2. NAVER_USER ê³ì (401x1127)ê³¼ ì íë¦¬ì¼ì´ì ë¹ë°ë²í¸ë¥¼ ìì±í ê³ì ì´ ëì¼íì§ íì¸í´ ì£¼ì¸ì.
+2026-08-27T06:16:53.8366187Z ìì§ ìë£: ì´ 18ê° ê¸°ì¬
+2026-08-27T06:16:53.8366418Z 
+2026-08-27T06:16:53.8366646Z --- [ìì±ë ë¸ë¦¬í ë´ì©] ---
+2026-08-27T06:16:53.8367015Z ê¸ìµë°ì¼ë¦¬: 26/8/27
+2026-08-27T06:16:53.8367196Z 
+2026-08-27T06:16:53.8367354Z [ìí/ì¹´ë]
+2026-08-27T06:16:53.8367504Z 
+2026-08-27T06:16:53.8367787Z "3ìµ ë¹ë¦¬ë©´, æì´ìë§ 200ë§ì"â¦ì£¼ë´ë ê¸ë¦¬ '8% ìë' ì¤ë <ë´ìì¤>
+2026-08-27T06:16:53.8371019Z https://news.google.com/rss/articles/CBMiYEFVX3lxTE1qRS1SV1pCSllNVmZUYUV4bEN4b014SFlXZkZCR0JXdEJ6c1ZlRWJiVFNPQnI2aTNkS2FNbG1WamRza0luRm1kMy1lSXc1N2gzQlh6X1dacWJTM2hfU19ha9IBeEFVX3lxTE9LSHE0Y254Wlpla3NFY1VWcWY0VjNlcEY5MzR1WXlaOGt0anZDQ2dIN01EZU9YbE9ySlZkSzBTUnpCdXEyVW9RWVd1SW5VTE9hYnZMOEtZY3QtanFlWkpGWHN1QzRyNVFEM01fSDNHSGdVdzc5eUZJRA?oc=5
+2026-08-27T06:16:53.8374599Z 
+2026-08-27T06:16:53.8374858Z 7ì ì£¼ë´ë ê¸ë¦¬ 4.48%â¦"32ê°ì ë§ì ìµê³ " <ê²½ì íìì¤>
+2026-08-27T06:16:53.8376315Z https://news.google.com/rss/articles/CBMiU0FVX3lxTE52U1FJOWs0YlhweTVScDl3dzJ0WDhDUUJPRF9HOER5R1NFYWxKY01rTVVHU24tR1VRblY2RDlmS2YtQ0FNS1VFT1YzTnlTRWJlZ2sw?oc=5
+2026-08-27T06:16:53.8377422Z 
+2026-08-27T06:16:53.8377690Z 7ì ìí ì£¼ë´ë ê¸ë¦¬ 4.48%â¦2ë 8ê°ìä¾ ìµê³ ì¹ <íë ìì>
+2026-08-27T06:16:53.8379170Z https://news.google.com/rss/articles/CBMia0FVX3lxTFBYVVdBa1RVNnBmUmVnQS1QMDBZb3p6S08tUUt2SUJySTNXQ3lDQlJreDlFaXlCNEZHQlJialVOOXpobXVHZ1U3OFVIeGhzQklEcWxFQTVyWTBPY0pyME5IVVRXUFV4RUVsdzlz?oc=5
+2026-08-27T06:16:53.8380548Z 
+2026-08-27T06:16:53.8380829Z ê¸°ì¤ê¸ë¦¬ ë¤ì 3%ëâ¦ê°ê³ë¶ì± ë¶ë´ì ê²½ë¨ ì£¼íìì¥ë ê¸´ì¥ <v.daum.net>
+2026-08-27T06:16:53.8382037Z https://news.google.com/rss/articles/CBMiT0FVX3lxTE1LTzdqa2k5ZGs2NXFwalBRdDYtRXRHT1l0UFNRVXAyWUhjanZreFhneEhZMlZJbGwyZEozM0tlVE5iWmRjSjgyOXZkS0ZXUEk?oc=5
+2026-08-27T06:16:53.8383238Z 
+2026-08-27T06:16:53.8383407Z [ë³´í]
+2026-08-27T06:16:53.8383568Z 
+2026-08-27T06:16:53.8383824Z í¬ìììµ ê°ì ì ìë°ê¸° ë³´íì¬ ìì´ìµ 13%â <ë§¤ì¼ì¼ë³´>
+2026-08-27T06:16:53.8385970Z https://news.google.com/rss/articles/CBMiZEFVX3lxTE82a21IVnB0UTVVZzRqMUpqMHp3SEsxRkZ5YUVydGc1aENWdk1BLWo3M1RSREQ2NnAxdTR4Sk1iUmQ4NEdpRzZlYmEtZW16NUNINHN5QTR5UGw3N2tnQkFOTmtaN18?oc=5
+2026-08-27T06:16:53.8387329Z 
+2026-08-27T06:16:53.8387608Z ì¬ ìë°ê¸° ë³´íì¬ ë¹ê¸°ìì´ìµ, ìëë³´ë¤ 1ì¡°370ìµ ì¦ê° <íêµ­ì¸ì ì ë¬¸>
+2026-08-27T06:16:53.8389064Z https://news.google.com/rss/articles/CBMiZEFVX3lxTE1ST0NxMFBzSEw0RW9OczR1NEVIWjd0VlVZVE9MaXVEZFA0dXUwV0U1ZEZmamViVUl2U0VVaHZtSWlxZDhBTU0wTXg0eG9QNGU3Vm5xT3JRbmp1WWVOQ2k0RTBkYkc?oc=5
+2026-08-27T06:16:53.8390451Z 
+2026-08-27T06:16:53.8390888Z ì¬ ìë°ê¸° ë³´íì¬ ìì´ìµ 9ì¡°ìâ¦í¬ìììµ ê°ì ì 1ì¡°ì ì¦ê° <ì°í©ë´ì¤>
+2026-08-27T06:16:53.8398480Z https://news.google.com/rss/articles/CBMiW0FVX3lxTE5yNUF0SlZ2TFBBbnRTV09mVS1KaGp1SkJVZk9ET1RrelEtVld3STdGNkU3b182UzhfVVlxTUNiTXJlVFBSS1NJX0JWcnZwZGxLVVRkaEh5SmxpUUnSAWBBVV95cUxPZWFyVDhRY2llOUpmcHdDV2pDLVFDN1ZRWGRDNk5VT0pNRVkwdVY2WC1tNTV1T01YQ2xiV2ViSFlYenItOGZZdl9CRjllbldKQUZGUi1OdEtqUEF4Z0UwVHA?oc=5
+2026-08-27T06:16:53.8401276Z 
+2026-08-27T06:16:53.8401709Z ë³´íì¬ ìë°ê¸° ìì´ìµ 9ì¡°138ìµìâ¦í¬ìììµ ê°ì ì 13% ì¦ê° <ë°ì¼ë¦¬eë´ì¤>
+2026-08-27T06:16:53.8403217Z https://news.google.com/rss/articles/CBMib0FVX3lxTE9tMmRlcWpxSDZ0UWFrY0tLbGc0dWNWUVNmNWVhZmk1VFQ2RjF1OThhVjJVTkdLdUFEemtQb2M3c3VIN3VzaldmZmZLTy1GejhqT3I5U2dQTHZzODNUbjgzWTBpX0RtU255SkRjN1RDRQ?oc=5
+2026-08-27T06:16:53.8404696Z 
+2026-08-27T06:16:53.8404868Z [ì¦ê¶]
+2026-08-27T06:16:53.8405014Z 
+2026-08-27T06:16:53.8405529Z [ê¸ìµê° ì¬ëë¤] íí¬è­ ëì§í¸ìì°ë¶ìì¥ "STOë ë°íì´ìÂ·IMAì²ë¼ ì ì " <KB Think>
+2026-08-27T06:16:53.8407317Z https://news.google.com/rss/articles/CBMickFVX3lxTE8wdzYxODlPUjZJdkhxS2xwTm9jOTk0YUJTZjFRaV9oVEdtc3FZZ295R082MFdrQ3ZJbjRDMkg2OWpJb0t1ZzZ5VWttT1J4M1RtSDg0MDdySDhXVHZwLVFhYndMaW5lcnpseVYwN2ZzMWdHUQ?oc=5
+2026-08-27T06:16:53.8408947Z 
+2026-08-27T06:16:53.8409230Z ì½ì¤ì½¤, í í°ì¦ê¶ ì¸íë¼ êµ¬ì¶ ìëâ¦ì¦ê¶ì¬ 12ê³³ ì°¸ì¬ <ë¸ë¦¿ì§ê²½ì >
+2026-08-27T06:16:53.8410746Z https://news.google.com/rss/articles/CBMiWkFVX3lxTFBta25tdk9UZzV5bjkxV0t3WndCbEZRM3NzNUNZb2Zrc21zODlwVW9EcjY0cUVLQ1dqeUZmQkFzdDEtLUhjOGdkV0gzU19KZGN5ZFl6c21ITGV4Zw?oc=5
+2026-08-27T06:16:53.8412022Z 
+2026-08-27T06:16:53.8412333Z ì½ì¤ì½¤, ìë³¸ìì¥ âë°íÂ·ì íµÂ·ê²°ì â ì¸íë¼ êµ¬ì¶ ëì ë¤ <sisaon.co.kr>
+2026-08-27T06:16:53.8414135Z https://news.google.com/rss/articles/CBMia0FVX3lxTFBVeU5ydDREZUxBazJnem84WnVqYnNnWmM4ZGxheV9Cam5hdk5iRHQ2VjlZTFpzenNhNXdFeVpkZ3RfT2NXdGZaVWNIQmFGZHpNTUhzanJNUVZzMGRzWFlMdWE5QjlFTkFwbWF3?oc=5
+2026-08-27T06:16:53.8416056Z 
+2026-08-27T06:16:53.8416500Z 'SKIET í¡ìí©ë³ ', SKì´ë¸ë² ì´ì, ì£¼ê°ê¸ë½...ì¦ê¶ì¬ "ì£¼ì£¼íì êµ¬ì²´ì  ê°ì´ëë¼ì¸ ì ì íì" <ë°ì¼ë¦¬ê²½ì >
+2026-08-27T06:16:53.8427428Z https://news.google.com/rss/articles/CBMibEFVX3lxTE1HeDRUYUZxMEN2aC1nWVUtcnFBWjcxWGhEOTBiZjVnM2JOaWhOMmROdlN1ZWxSeFFFRkZlWlFvMmczcXlqOWhhNmk3eDhWSFM3WnljM0pzRXpCbnhkQ0Ntd2J5Y1NjRXFOTmpqeA?oc=5
+2026-08-27T06:16:53.8436003Z 
+2026-08-27T06:16:53.8436409Z [ëì§í¸ ê¸ìµ]
+2026-08-27T06:16:53.8436777Z 
+2026-08-27T06:16:53.8437254Z ëì§í¸ìì°ê¸°ë³¸ë² ë¤ì ìëâ¦ê±°ëì 'ì§ë¶ ì í' ëì  'ìê²°ê¶ ì í' ëì ë¶ì <ë´ìì¤>
+2026-08-27T06:16:53.8441804Z https://news.google.com/rss/articles/CBMieEFVX3lxTE5IVVJ5elo3TkNEck45S2VBZTlRSkU4TVJ3VUdZeGQ0NHEyV3JPWVVPRllvelppNmJPSTdmZzY3c1h3UUJXaGZaM2NjNXJ6Z2tKOHpaQnFhc25BeHgxSmV3S1BUV0UzVGJ4MjRlNFZDWVFuekMxcnl0LdIBeEFVX3lxTE5IVVJ5elo3TkNEck45S2VBZTlRSkU4TVJ3VUdZeGQ0NHEyV3JPWVVPRllvelppNmJPSTdmZzY3c1h3UUJXaGZaM2NjNXJ6Z2tKOHpaQnFhc25BeHgxSmV3S1BUV0UzVGJ4MjRlNFZDWVFuekMxcnl0LQ?oc=5
+2026-08-27T06:16:53.8446050Z 
+2026-08-27T06:16:53.8446534Z ê¸ìµì, âëì§í¸ìì°ë² ëì£¼ì£¼ ì§ë¶ ì í ë¯¸ì â <intn.co.kr>
+2026-08-27T06:16:53.8448420Z https://news.google.com/rss/articles/CBMiakFVX3lxTE5nWDd2YU9neE5iZlRsMHg1eEthbkdLU1pRQUNja3VlY245eE9CSzRhSWNfVVAtcmI0a0hWbzZod3o2WXNzaFNZd1o5YklVVGhiclVLYTNhVjJIUlZ1MzJndVFFRGtCMndjOEE?oc=5
+2026-08-27T06:16:53.8450115Z 
+2026-08-27T06:16:53.8450495Z [ë¶ëì°]
+2026-08-27T06:16:53.8450861Z 
+2026-08-27T06:16:53.8451441Z ë¶í ì¼ì°ë 257 ê´ë¦¬ì§ì­, ì¸ì² ì²« âì£¼ë¯¼ì ìâ ì£¼íì ë¹â¦ì¬ìì±Â·ìëÂ·ìì§ â3ë°ìâ ê°ì·ë¤ <íì°ì§í¤ë´ë>
+2026-08-27T06:16:53.8453715Z https://news.google.com/rss/articles/CBMic0FVX3lxTE1RR1c3cE1nNlJab1JzUjMtVXhOUk1yTEdlRUI1RkJxVVA3bDU1Zkl2M1kyMHlZTTJpRVcwOS04clByd1VfNl9hRTVYWEQ3R3pjZEdpN2ZuTXRGakZ4cFJlbXFaZTZxS2g0NEc5bnJLS1ZkUnc?oc=5
+2026-08-27T06:16:53.8455820Z 
+2026-08-27T06:16:53.8456309Z ê²½ê¸°ëìí ì¥ì¡í ìì, ì¬ê°ë°Â·ì¬ê±´ì¶Â·ë¦¬ëª¨ë¸ë§ ì ê² <íêµ­ì£¼íê²½ì ì ë¬¸>
+2026-08-27T06:16:53.8458155Z https://news.google.com/rss/articles/CBMiaEFVX3lxTE16NTNvdE5GNUo4OEk1QmM0N2NnUC0zRFpSeGx6V2VFRjVmdFdqZGtrRXNocG5sVE1Td2t3aU80UFJudnpMcnNyTkhpQ2RnUGtMSGxjQnhKLXF3ZW54RDVwSHBKcElCamho?oc=5
+2026-08-27T06:16:53.8459806Z 
+2026-08-27T06:16:53.8460368Z âëª¨ìì£¼í 1í¸â ê´ì§ íìì°ë¦½ ì¤ê³µâ¦ìì¸ì, ì´ê¸°ì¬ìë¹ ì²« ìµì âìµë 20ìµìâ ì§ì ëì <ë¸ë¦¿ì§ê²½ì >
+2026-08-27T06:16:53.8462067Z https://news.google.com/rss/articles/CBMiWkFVX3lxTE9KOHR1UktzZlVqeXNuU3h1UjBEM292dGtkMGwxMEdseWhfcDNkbzhTcmJ4ekd6WUpxSWhfaGdReXo5aFRPSUFBUEVlRVhadmxiYTl1b1BZYXlVUQ?oc=5
+2026-08-27T06:16:53.8463544Z 
+2026-08-27T06:16:53.8463988Z ìì¸ì, ëª¨ìì£¼í ìê¸ë ì§ìâ¦ì° 2.2%ë¡ ìµë 20ìµì <í¤ë´ëê²½ì >
+2026-08-27T06:16:53.8465686Z https://news.google.com/rss/articles/CBMiV0FVX3lxTE5lOFNEckhvOTVDX2ZoZC1aUUF0eEFNWXQ2a2NNN0tMR0ZZUE4zU0V1UHN5RnN2eHBObUN6czBQTS1ZX0s2bVNtVEZRVkxEWUhfWmxMaE1VZw?oc=5
+2026-08-27T06:16:53.8467178Z 
+2026-08-27T06:16:53.8467717Z *ì ë´ì©ì êµ­ë´ì¸ ì¸ë¡ ì¬ ë´ì¤ ë±ì ì¸ì©í ìë£ë¡ ë³ëì ì¹ì¸ ì ì°¨ ìì´ ì ê³µí©ëë¤.
+2026-08-27T06:16:53.8468365Z -----------------------------
+2026-08-27T06:16:53.8468808Z 
+2026-08-27T06:16:53.8469159Z >>> 2. ì´ë©ì¼ ë°ì¡ ì¤...
+2026-08-27T06:16:53.8549407Z ##[error]Process completed with exit code 1.
+2026-08-27T06:16:53.8699361Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-08-27T06:16:53.8700606Z Post job cleanup.
+2026-08-27T06:16:53.9713595Z [command]/usr/bin/git version
+2026-08-27T06:16:53.9786531Z git version 2.55.0
+2026-08-27T06:16:53.9853375Z Temporarily overriding HOME='/home/runner/work/_temp/f2233aef-b392-4747-8ad7-64bfe4c82b5a' before making global git config changes
+2026-08-27T06:16:53.9855066Z Adding repository directory to the temporary git global config as a safe directory
+2026-08-27T06:16:53.9858766Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/news-bot/news-bot
+2026-08-27T06:16:53.9960217Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-08-27T06:16:54.0029057Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-08-27T06:16:54.0421029Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-08-27T06:16:54.0476240Z http.https://github.com/.extraheader
+2026-08-27T06:16:54.0486097Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-08-27T06:16:54.0554541Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-08-27T06:16:54.0998043Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-08-27T06:16:54.1092493Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-08-27T06:16:54.1614071Z Cleaning up orphan processes
+2026-08-27T06:16:54.1877924Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
