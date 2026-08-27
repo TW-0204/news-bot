@@ -27,7 +27,8 @@ jobs:
       - name: 뉴스 수집 및 메일 발송 실행
         env:
           NAVER_USER: ${{ secrets.NAVER_USER }}
-          NAVER_PASS: ${{ secrets.NAVER_PASS_TEST || secrets.NAVER_PASS }}
+          NAVER_PASS: ${{ secrets.NAVER_PASS }}
+          NAVER_PASS_TEST: ${{ secrets.NAVER_PASS_TEST }}
           RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
         run: |
           python main.py

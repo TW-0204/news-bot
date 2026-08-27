@@ -11,11 +11,11 @@ def send_email(subject, text_content):
     네이버 SMTP를 사용하여 메일을 발송합니다.
     """
     smtp_user = os.getenv("NAVER_USER", "401x1127@naver.com")
-    smtp_pass = os.getenv("NAVER_PASS")  # 네이버 비밀번호 또는 2단계 인증 애플리케이션 비밀번호
+    smtp_pass = os.getenv("NAVER_PASS_TEST") or os.getenv("NAVER_PASS")
     recipient = os.getenv("RECEIVER_EMAIL", "401x1127@naver.com")
 
     if not smtp_pass:
-        raise ValueError("환경변수 NAVER_PASS 가 설정되지 않았습니다.")
+        raise ValueError("환경변수 NAVER_PASS 또는 NAVER_PASS_TEST 가 설정되지 않았습니다.")
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
