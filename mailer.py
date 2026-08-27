@@ -52,11 +52,23 @@ def send_email(subject, text_content):
     msg.attach(part_html)
 
     # 네이버 SMTP 포트 465 (SSL) 연결
-    with smtplib.SMTP_SSL("smtp.naver.com", 465) as server:
-        server.login(smtp_user, smtp_pass)
-        server.send_message(msg)
-
-    print(f"[{recipient}] 메일 발송 완료!")
+    username = smtp_user.split("@")[0] if "@" in smtp_user else smtp_user
+    
+    try:
+        with smtplib.SMTP_SSL("smtp.naver.com", 465) as server:
+            # 먼저 순수 아이디로 로그인 시도, 실패 시 전체 이메일로 시도
+            try:
+                server.login(username, smtp_pass)
+            except smtplib.SMTPAuthenticationError:
+                server.login(smtp_user, smtp_pass)
+            server.send_message(msg)
+        print(f"[{recipient}] 메일 발송 성공!")
+    except smtplib.SMTPAuthenticationError as e:
+        raise Exception(
+            "네이버 로그인 인증에 실패했습니다(535 Error).\n"
+            "1. 네이버 메일 환경설정에서 'POP3/SMTP 사용'이 [사용함]으로 되어 있는지 확인해 주세요.\n"
+            "2. 네이버 2단계 인증을 쓰고 계신 경우 '애플리케이션 비밀번호(16자리)'를 발급받아 입력해야 합니다."
+        ) from e
 
 if __name__ == "__main__":
     # 테스트용
