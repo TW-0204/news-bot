@@ -51,24 +51,45 @@ def send_email(subject, text_content):
     part_html = MIMEText(html_content, "html", "utf-8")
     msg.attach(part_html)
 
-    # 네이버 SMTP 포트 465 (SSL) 연결
+    # 네이버 SMTP 연결 시도 (SSL 465 -> STARTTLS 587)
     username = smtp_user.split("@")[0] if "@" in smtp_user else smtp_user
     
-    try:
-        with smtplib.SMTP_SSL("smtp.naver.com", 465) as server:
-            # 먼저 순수 아이디로 로그인 시도, 실패 시 전체 이메일로 시도
+    success = False
+    last_err = None
+
+    # 1. 포트 465 (SSL) 시도
+    for login_id in [username, smtp_user]:
+        try:
+            with smtplib.SMTP_SSL("smtp.naver.com", 465, timeout=15) as server:
+                server.login(login_id, smtp_pass)
+                server.send_message(msg)
+                success = True
+                break
+        except Exception as e:
+            last_err = e
+
+    # 2. 포트 587 (STARTTLS) 시도 (465 실패 시)
+    if not success:
+        for login_id in [username, smtp_user]:
             try:
-                server.login(username, smtp_pass)
-            except smtplib.SMTPAuthenticationError:
-                server.login(smtp_user, smtp_pass)
-            server.send_message(msg)
+                with smtplib.SMTP("smtp.naver.com", 587, timeout=15) as server:
+                    server.starttls()
+                    server.login(login_id, smtp_pass)
+                    server.send_message(msg)
+                    success = True
+                    break
+            except Exception as e:
+                last_err = e
+
+    if success:
         print(f"[{recipient}] 메일 발송 성공!")
-    except smtplib.SMTPAuthenticationError as e:
+    else:
         raise Exception(
-            "네이버 로그인 인증에 실패했습니다(535 Error).\n"
-            "1. 네이버 메일 환경설정에서 'POP3/SMTP 사용'이 [사용함]으로 되어 있는지 확인해 주세요.\n"
-            "2. 네이버 2단계 인증을 쓰고 계신 경우 '애플리케이션 비밀번호(16자리)'를 발급받아 입력해야 합니다."
-        ) from e
+            f"네이버 SMTP 로그인 인증 실패 (원인: {last_err})\n"
+            "확인 사항:\n"
+            "1. https://mail.naver.com 환경설정 > POP3/IMAP 설정 > POP3/SMTP 설정에서 'POP3/SMTP 사용'이 [사용함]으로 체크되어 있는지 꼭 확인해 주세요.\n"
+            "2. NAVER_USER 계정(401x1127)과 애플리케이션 비밀번호를 생성한 계정이 동일한지 확인해 주세요."
+        ) from last_err
 
 if __name__ == "__main__":
     # 테스트용
