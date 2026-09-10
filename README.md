@@ -73,14 +73,14 @@ GitHub Actions가 안전하게 네이버 메일을 보낼 수 있도록 인증 �
 
 | Name (이름) | Secret Value (값) | 설명 |
 | :--- | :--- | :--- |
-| `NAVER_USER` | `401x1127@naver.com` | 발송할 네이버 계정 아이디/이메일 |
+| `NAVER_USER` | `your_naver_id@naver.com` | 발송할 네이버 계정 아이디/이메일 |
 | `NAVER_PASS` | `네이버 비밀번호` 또는 `앱 비밀번호` | 네이버 로그인 비밀번호 |
-| `RECEIVER_EMAIL` | `401x1127@naver.com` | 뉴스를 수신할 이메일 주소 |
+| `RECEIVER_EMAIL` | `recipient_email@domain.com` | 뉴스를 수신할 이메일 주소 |
 
 ---
 
 ## ⏰ 실행 스케줄 및 수동 테스트
 
-- **자동 실행**: 매일 한국 시간(KST) **오전 07:30**에 자동으로 동작합니다.
+- **자동 실행**: 매일 한국 시간(KST) **오전 07:37**에 자동으로 동작합니다.
 - **수동 테스트**:
   - GitHub 저장소의 **[Actions]** 탭 ➔ 좌측의 **[Daily Finance News Mailer]** 워크플로우 클릭 ➔ 우측 **[Run workflow]** 버튼을 클릭하면 즉시 테스트 메일이 발송됩니다.
